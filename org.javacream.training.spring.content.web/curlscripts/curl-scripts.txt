@@ -1,0 +1,6 @@
+# Content
+
+curl -X GET http://localhost:9092/api/content/SpringinAction
+curl -X GET http://localhost:9092/api/content/tags/Java
+curl -X POST -H "Content-Type: text/plain" -H "tags: From" -H "tags: cURL" -d Simple http://localhost:9092/api/content/JavaInAction
+

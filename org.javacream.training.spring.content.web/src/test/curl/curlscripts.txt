@@ -1,0 +1,5 @@
+# Read content of Resource IDs 
+
+http://localhost:9092/api/content/SpringInAction
+
+http://localhost:9092/api/content/tags/Java

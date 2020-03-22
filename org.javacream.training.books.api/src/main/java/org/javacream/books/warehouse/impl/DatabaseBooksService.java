@@ -8,7 +8,7 @@ import javax.persistence.TypedQuery;
 
 import org.javacream.books.isbngenerator.api.IsbnGenerator;
 import org.javacream.books.isbngenerator.api.IsbnGenerator.SequenceStrategy;
-import org.javacream.books.store.ReadingStoreService;
+import org.javacream.books.store.StoreService;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
 import org.javacream.books.warehouse.api.BooksService;
@@ -23,7 +23,7 @@ public class DatabaseBooksService implements BooksService {
 	@SequenceStrategy
 	private IsbnGenerator isbnGenerator;
 	@Autowired
-	private ReadingStoreService storeService;
+	private StoreService storeService;
 
 
 	public void setIsbnGenerator(IsbnGenerator isbnGenerator) {

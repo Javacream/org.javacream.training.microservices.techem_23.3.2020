@@ -2,7 +2,7 @@
 
 curl -X POST http://localhost:8088/api/books?title=Spring
 curl -X GET http://localhost:8088/api/books/<REPLACE_WITH_GENERATED_ISBN>
-curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8088/api/books/<REPLACE_WITH_GENERATED_ISBN>
+curl -X PUT -H "Content-Type: application/json" -d@update.json http://localhost:8088/api/books
 curl -X DELETE http://localhost:8088/api/books/<REPLACE_WITH_GENERATED_ISBN>
 
 

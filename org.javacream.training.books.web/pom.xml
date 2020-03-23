@@ -3,11 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>org.javacream.training.books.web</artifactId>
-	<version>1.5</version>
+	<version>1.6</version>
 	<parent>
 		<groupId>org.javacream.training</groupId>
-		<artifactId>org.javacream.training.build.parents.executable</artifactId>
-		<version>1.1</version>
+		<artifactId>org.javacream.training.build.parents.microservice</artifactId>
+		<version>1.0</version>
 	</parent>
 	<dependencies>
 		<!-- <dependency> <groupId>org.javacream.training</groupId> <artifactId>org.javacream.training.telekom.academy.store</artifactId> 
@@ -21,11 +21,6 @@
 			<groupId>org.javacream.training</groupId>
 			<artifactId>org.javacream.training.books.api</artifactId>
 			<version>1.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-			<version>2.2.0.RELEASE</version>
 		</dependency>
 	</dependencies>
 

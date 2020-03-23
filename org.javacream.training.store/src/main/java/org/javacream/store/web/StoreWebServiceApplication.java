@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
+import org.springframework.jmx.export.annotation.ManagedAttribute;
 import org.springframework.jmx.export.annotation.ManagedOperation;
 import org.springframework.jmx.export.annotation.ManagedResource;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -67,6 +68,7 @@ public class StoreWebServiceApplication {
 		}
 	}	
 	private int readStock(String category, String id) {
+		counter++;
 		try {
 			Query query = entityManager.createQuery("select stock from StoreEntry where category = :category and itemId = :id");
 			query.setParameter("category", category);
@@ -84,4 +86,17 @@ public class StoreWebServiceApplication {
 		
 	}
 
+	@ManagedOperation(description = "reset counter")
+	public void resetCounter() {
+		counter = 0;
+	}
+
+	private int counter = 0;
+
+	@ManagedAttribute(description =  "the actual invocation counter")
+	public int getCounter() {
+		return counter;
+	}
+	
+	
 }

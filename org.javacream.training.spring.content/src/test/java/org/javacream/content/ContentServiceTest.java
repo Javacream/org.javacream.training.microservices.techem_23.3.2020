@@ -1,6 +1,7 @@
 package org.javacream.content;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +24,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @ActiveProfiles("test")
 public class ContentServiceTest {
 
-	private static final String VALID_ID = "SpringInAction";
+	private static final String VALID_ID = "SpringinAction";
 	private static final String INVALID_ID = "5&6%%";
 	private static final String VALID_TAG = "Java";
 	private static final String INVALID_TAG = ".NET";
@@ -69,19 +70,11 @@ public class ContentServiceTest {
 
 	}
 
+	@Test
+	public void createContent() {
+		List<String> tags = Arrays.asList(new String[] {"this", "that"});
+		contentService.createContent(new Content(Double.toString(Math.random()), tags, "TEST"));
 
-}
-@Configuration
-class ContentServiceTestConfiguration {
-
-	@Bean @Qualifier("contentStore") Map<String, Content> contentStore(){
-		HashMap<String, Content> testData = new HashMap<>();
-		List<String> tags1 = new ArrayList<String>();
-		tags1.add("IT");
-		tags1.add("Java");
-		tags1.add("Spring");
-		Content content = new Content("SpringInAction", tags1, "A very good book");
-		testData.put(content.getId(), content);
-		return testData;
 	}
+
 }

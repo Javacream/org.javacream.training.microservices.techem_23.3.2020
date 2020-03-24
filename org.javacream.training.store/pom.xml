@@ -6,22 +6,7 @@
 	<version>1.1-SNAPSHOT</version>
 	<parent>
 		<groupId>org.javacream.training</groupId>
-		<artifactId>org.javacream.training.build.parents.executable</artifactId>
-		<version>1.1</version>
+		<artifactId>org.javacream.training.build.parents.microservice</artifactId>
+		<version>1.0</version>
 	</parent>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.jolokia</groupId>
-			<artifactId>jolokia-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.hawt</groupId>
-			<artifactId>hawtio-springboot</artifactId>
-			<version>2.9.1</version>
-		</dependency>
-	</dependencies>
 </project>

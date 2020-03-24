@@ -8,5 +8,9 @@ public interface ContentService {
 	
 	List<String> findByTag(String tag);
 
+	List<Content> findByData(String data);
+
+	void deleteById(String id);
+	
 	void createContent(Content content);
 }

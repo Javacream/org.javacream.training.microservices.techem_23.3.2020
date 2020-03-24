@@ -35,6 +35,16 @@ public class CouchbaseContentService implements ContentService {
 	public void createContent(Content content) {
 		contentRepository.save(content);
 	}
+
+	@Override
+	public List<Content> findByData(String data) {
+		return contentRepository.findByData(data);
+	}
+
+	@Override
+	public void deleteById(String id) {
+		contentRepository.deleteById(id);
+	}
 	
 	
 

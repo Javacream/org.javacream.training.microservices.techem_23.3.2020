@@ -1,10 +1,7 @@
 package org.javacream.content;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.javacream.content.api.Content;
 import org.javacream.content.api.ContentService;
@@ -12,10 +9,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -28,6 +22,9 @@ public class ContentServiceTest {
 	private static final String INVALID_ID = "5&6%%";
 	private static final String VALID_TAG = "Java";
 	private static final String INVALID_TAG = ".NET";
+	private static final String VALID_DATA = "TES%";
+	private static final String INVALID_DATA = "NOT_TEST";
+	
 	
 	
 	@Autowired
@@ -77,4 +74,26 @@ public class ContentServiceTest {
 
 	}
 
+	@Test
+	public void deleteContent() {
+		List<String> tags = Arrays.asList(new String[] {"this", "that"});
+		final String TEST_ID="TEST_ID_";
+		contentService.createContent(new Content(TEST_ID, tags, "TEST"));
+		Assert.assertNotNull(contentService.findById(TEST_ID));
+		contentService.deleteById(TEST_ID);
+
+	}
+	
+	@Test
+	public void validDataIsFound() {
+		createContent();
+		Assert.assertTrue(contentService.findByData(VALID_DATA).size() > 0);
+
+	}
+	@Test
+	public void invalidDataIsNotFound() {
+		Assert.assertTrue(contentService.findByData(INVALID_DATA).size()== 0);
+
+	}
+	
 }

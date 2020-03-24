@@ -12,4 +12,8 @@ public interface ContentRepository extends CrudRepository<Content, String> {
 	
 	@Query("#{#n1ql.selectEntity} WHERE #{#n1ql.filter} AND $1 in tags")
 	List<Content> findByTag(String tag);
+
+	@Query("#{#n1ql.selectEntity} WHERE #{#n1ql.filter} AND data LIKE $1")
+	List<Content> findByData(String data);
+
 }

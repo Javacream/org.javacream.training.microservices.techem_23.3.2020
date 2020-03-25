@@ -18,6 +18,7 @@
 		<dependency>
 			<groupId>org.jolokia</groupId>
 			<artifactId>jolokia-core</artifactId>
+			<exclusions></exclusions>
 		</dependency>
 		<dependency>
 			<groupId>io.hawt</groupId>
